@@ -1,8 +1,12 @@
 # drawio-minio
 
-一个通过minio作为存储介质的drawio流程图绘制程序
+一个通过minio作为存储介质的 draw.io 流程图绘制程序
 
-# DEMO
+## TODO
+
+- [ ] 增加内网部署 draw.io
+
+## DEMO
 
 ## 使用docker
 
