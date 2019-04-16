@@ -23,4 +23,4 @@ npm install
 npm start
 ```
 
-浏览器访问： `http://127.0.0.1:3000/?filename=a_file`
+浏览器访问： `http://127.0.0.1:3000/?filename=any_filename`
