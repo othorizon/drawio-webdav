@@ -1,6 +1,13 @@
-# drawio-minio
+# drawio-webdav
 
-一个通过minio作为存储介质的 draw.io 流程图绘制程序
+采用webdav方式存储drawio文件的解决方案
+
+目前实现
+- 存储到minio
+
+待实现
+- 存储到dzzoffice
+- 存储到nextcloud
 
 ## TODO
 
@@ -8,13 +15,13 @@
 
 ## DEMO
 
-## 使用docker
+**使用docker**
 
 `docker run --rm -p 3000:3000 itrizon/drawio-minio:demo`
 
 浏览器访问： `http://127.0.0.1:3000/?filename=a_file`
 
-## 本地部署
+**本地部署**
 
 ```bash
 git clone https://github.com/othorizon/drawio-minio.git
