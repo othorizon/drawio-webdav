@@ -17,14 +17,14 @@
 
 **使用docker**
 
-`docker run --rm -p 3000:3000 itrizon/drawio-minio:demo`
+`docker run --rm -p 3000:3000 itrizon/drawio-webdav:demo`
 
 浏览器访问： `http://127.0.0.1:3000/?filename=a_file`
 
 **本地部署**
 
 ```bash
-git clone https://github.com/othorizon/drawio-minio.git
+git clone https://github.com/othorizon/drawio-webdav.git
 cd drawio-minio
 npm install
 npm start
