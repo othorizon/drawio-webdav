@@ -1,5 +1,5 @@
 {
-  "name": "drawio-minio",
+  "name": "drawio-webdav",
   "version": "0.0.0",
   "private": true,
   "scripts": {
