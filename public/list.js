@@ -1,4 +1,19 @@
 // https://github.com/jgraph/drawio-webdav
+function setNewFileName(input) {
+    var newFileName = input.value;
+    var newButton = document.getElementById("newFileNameButton");
+    console.log('newFileName' + newFileName);
+
+    var ex = '.drawio';
+    //endwith ex
+    if (newFileName.substring(newFileName.length - ex.length) == ex) {
+        newButton.href = '/?filename=' + newFileName;
+
+    }else{
+        alert('文件名必须以'+ex+'结尾');
+    }
+
+};
 function editDiagram(image) {
     var initial = image.getAttribute('src');
     image.setAttribute('src', 'http://www.draw.io/images/ajax-loader.gif');
