@@ -32,7 +32,7 @@ docker-compose up
 
 首先访问 `http://127.0.0.1:9000` 进入minio,使用docker-compose.yml配置的MINIO_ROOT_USER和MINIO_ROOT_PASSWORD登陆minio,创建test bucket  
 ### 看不了图去[码云](https://gitee.com/timsengit/my-drawio.git)
-然后访问 `http://127.0.0.1:3000/list` 进入列表页面
+然后访问 `http://127.0.0.1:3000/` 进入列表页面
 ![列表页面](doc/my-drawio_list.png)
 
 输入新文件名可新增文件，点击已存在文件可直接跳转至预览页面
