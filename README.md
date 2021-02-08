@@ -1,8 +1,11 @@
-# drawio-webdav
+# my-drawio
 
-采用webdav方式存储drawio文件的解决方案
+自定义存储drawio编辑器存储文件
 
 目前实现
+- /list 页面列举文件夹下的drawio文件
+- get /?filename=x.drawio 获取x.drawio的图片显示在页面，点击图片进入drawio编辑器iframe
+- put /?filename=x.drawio 保存drawio编辑器
 - 存储到minio
 
 待实现
@@ -13,21 +16,17 @@
 
 - [ ] 增加内网部署 draw.io
 
-## DEMO
+## DEMO  
 
-**使用docker**
+**使用docker-compose**
 
-`docker run --rm -p 3000:3000 itrizon/drawio-webdav:demo`
+`
+docker-compose up
+`  
+该命令会开启三个服务：
+> drawio 3000端口 links引用以下两个服务  
+>> minio 9000端口  
+>> drawioservice 8090：8080端口  
 
-浏览器访问： `http://127.0.0.1:3000/?filename=a_file`
-
-**本地部署**
-
-```bash
-git clone https://github.com/othorizon/drawio-webdav.git
-cd drawio-minio
-npm install
-npm start
-```
-
-浏览器访问： `http://127.0.0.1:3000/?filename=any_filename`
+首先访问 `http://127.0.0.1:9000` 进入minio,使用docker-compose.yml配置的MINIO_ROOT_USER和MINIO_ROOT_PASSWORD登陆minio,创建test bucket  
+然后访问 `http://127.0.0.1:3000/list` 进入列表页面
