@@ -1,18 +1,18 @@
 version: '2.2'
 services:
-  drawio:
+  mydrawio:
     build:
       context: .
       dockerfile: Dockerfile
-    image: drawiowebdav:v1
-    container_name: drawiowebdav
+    image: mydrawio:v1
+    container_name: mydrawio
     ports:
       - 3000:3000
     networks:
       - drawio
     links:
       - minio
-      - drawioservice
+      - drawioeditor
   minio:
     image: minio/minio
     container_name: minio
@@ -26,11 +26,11 @@ services:
       - 9000:9000
     networks:
       - drawio
-  drawioservice:
+  drawioeditor:
     image: jgraph/drawio
-    container_name: drawioservice
+    container_name: drawioeditor
     volumes:
-      - /data/drawioservice:/data
+      - /data/drawioeditor:/data
     ports:
       - 8090:8080
     networks:

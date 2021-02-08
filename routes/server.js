@@ -6,9 +6,19 @@ const config = require('../config');
 const BucketName = config.BucketName;
 
 /* GET home page. */
-router.get('/list', list);
-router.get('/', open);
+router.get('/', get);
 router.put('/', save);
+
+function get(req, res, next) {
+    let fileName = req.param('filename');
+    console.log('get fileName ' + fileName);
+    if(fileName==undefined){
+        return list(req, res, next);
+    }else{
+        return open(req, res, next);
+    }
+
+}
 
 function list(req, res, next) {
     var stream = minioClient.listObjects(BucketName, '', true);
