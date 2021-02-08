@@ -29,6 +29,7 @@ docker-compose up
 >> drawioservice 8090：8080端口  
 
 首先访问 `http://127.0.0.1:9000` 进入minio,使用docker-compose.yml配置的MINIO_ROOT_USER和MINIO_ROOT_PASSWORD登陆minio,创建test bucket  
+### 看不了图去[码云](https://gitee.com/timsengit/my-drawio.git)
 然后访问 `http://127.0.0.1:3000/list` 进入列表页面
 ![列表页面](doc/my-drawio_list.png)
 
