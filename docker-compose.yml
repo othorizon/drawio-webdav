@@ -1,0 +1,41 @@
+version: '2.2'
+services:
+  mydrawio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mydrawio:v1
+    container_name: mydrawio
+    ports:
+      - 3000:3000
+    networks:
+      - drawio
+    links:
+      - minio
+      - drawioeditor
+  minio:
+    image: minio/minio
+    container_name: minio
+    command: server /data
+    environment:
+      - MINIO_ROOT_USER=AKIAIOSFODNN7EXAMPLE
+      - MINIO_ROOT_PASSWORD=wJalrXUtnFEMIK7MDENGbPxRfiCYEXAMPLEKEY
+    volumes:
+      - /data/minio:/data
+    ports:
+      - 9000:9000
+    networks:
+      - drawio
+  drawioeditor:
+    image: jgraph/drawio
+    container_name: drawioeditor
+    volumes:
+      - /data/drawioeditor:/data
+    ports:
+      - 8090:8080
+    networks:
+      - drawio
+
+networks:
+  drawio:
+    driver: bridge

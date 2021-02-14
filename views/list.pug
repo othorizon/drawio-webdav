@@ -1,0 +1,18 @@
+doctype html
+//https://pug.bootcss.com/api/getting-started.html
+
+html
+    head
+        block head
+            script(src='list.js')
+            link(href='list.css' type='text/css' rel='stylesheet')
+    body
+        p(id="fileName" hidden=true title=fileName)
+        h1(id="count" title=count ) 文件个数：#{count}
+        input(id="newFileName" placeholder="请输入新增的文件名" onblur="setNewFileName(this);")
+        a(id="newFileNameButton") 点击新增文件
+        ul
+          each val in fileList.length ? fileList : ['没有内容']
+            li
+              a(href='/?filename='+ val) #{val}
+
